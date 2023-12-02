@@ -35,10 +35,10 @@
         <label for="cryptoCurrency" class="form-label">CryptoCurrency:</label>
         <select v-model="cryptoCurrency" id="cryptoCurrency" required class="form-control">
           <option value="CELO">CELO</option>
-          <option value="Ripple">Ripple</option>
-          <option value="Bitcoin">Bitcoin</option>
-          <option value="Ether">Ether</option>
-          <option value="Algorand">Algorand</option>
+          <option value="XRP">Ripple</option>
+          <option value="BTC">Bitcoin</option>
+          <option value="ETH">Ether</option>
+          <option value="ALGO">Algorand</option>
         </select>
       </div>
 
@@ -52,7 +52,7 @@
       <div class="crypto-fee">
     <h3>Cryptocurrency Method</h3>
     <div class="crypto-card">
-      <p >Amount Received: {{ 'ZAR' + ' ' + cryptoAmount }}</p>
+      <p >Amount Received: {{ receivingCountry + ' ' + cryptoAmount }}</p>
     </div>
   </div>
 
@@ -83,9 +83,9 @@
       <tbody>
         <tr v-for="provider in providers" :key="provider.Provider">
           <td>{{ provider.Provider }}</td>
-          <td>{{ 'ZAR' + ' ' + provider['Received Amount'] }}</td>
+          <td>{{ this.receivingCountry + ' ' + provider['Received Amount'] }}</td>
           <td>{{ provider.Rate }}</td>
-          <td>{{ provider.Fee }}</td>
+          <td>{{ this.sendingCountry + ' ' + provider.Fee }}</td>
         </tr>
       </tbody>
     </table>
